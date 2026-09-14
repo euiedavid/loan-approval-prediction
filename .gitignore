@@ -1,0 +1,5 @@
+# Virtual environment
+.venv/
+
+# Trained model
+notebooks/loan_approval_model.joblib
