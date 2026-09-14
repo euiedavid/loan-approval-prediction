@@ -45,6 +45,7 @@ It includes:
 - Model serialization using Joblib
 - Test data prediction
 - Prediction output generation
+- Conclusion
 
 ## Data Analysis & Machine Learning Experience
 
