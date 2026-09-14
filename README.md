@@ -34,6 +34,18 @@ This notebook focuses on building and evaluating a machine learning model to pre
 
 The machine learning approach was based on a YouTube tutorial by **Lera Andronova**, which was used as a reference for the overall workflow and implementation. Parts of the code were rewritten and modified to practice writing Python independently and strengthen my understanding of the machine learning workflow.
 
+It includes:
+
+- Feature engineering
+- Data preprocessing
+- Logistic Regression modeling
+- Model evaluation
+- Cross-validation
+- Hyperparameter tuning
+- Model serialization using Joblib
+- Test data prediction
+- Prediction output generation
+
 ## Data Analysis & Machine Learning Experience
 
 - **Pandas:** Loaded and inspected the loan dataset, examined its dimensions, data types, non-null counts, and overall structure, identified missing values and duplicate records, and generated descriptive statistics.
@@ -46,7 +58,9 @@ The machine learning approach was based on a YouTube tutorial by **Lera Andronov
 - **Machine Learning:** Developed a **Logistic Regression** model to predict loan approval outcomes using a stratified train-test split.
 - **Model Evaluation:** Evaluated model performance using **Accuracy, Precision, Recall, F1-score, ROC-AUC, and a Confusion Matrix**.
 - **Cross-Validation & Tuning:** Applied **5-fold stratified cross-validation** and performed light hyperparameter tuning on Logistic Regression's `C` parameter using ROC-AUC as the selection metric.
-- **Prediction:** Generated loan approval probabilities and Y/N predictions for the unseen test dataset and exported the results to CSV.
+- **Model Persistence:** Used **Joblib** to save the trained machine learning pipeline as `loan_approval_model.joblib`, allowing the trained model and preprocessing steps to be reused without retraining.
+- **Prediction:** Generated loan approval probabilities and Y/N predictions for the unseen test dataset.
+- **Prediction Output:** Created and exported `loan_predictions.csv`, containing the **Loan ID, predicted loan status, and approval probability** for each test application.
 
 ## Model Performance
 
@@ -60,6 +74,13 @@ The Logistic Regression model achieved the following results on the hold-out tes
 | ROC-AUC | 87.2% |
 
 The model correctly classified **103 out of 123 applications** in the hold-out set. It correctly identified 74 approved applications and 29 rejected applications.
+
+## Model Outputs
+
+The machine learning notebook generates two main outputs:
+
+- **`loan_approval_model.joblib`** — Saved trained machine learning pipeline containing the preprocessing steps and Logistic Regression model.
+- **`loan_predictions.csv`** — Prediction file containing the `Loan_ID`, predicted `Loan_Status_Pred`, and `Approval_Probability` for the test applications.
 
 ## About the Dataset
 
